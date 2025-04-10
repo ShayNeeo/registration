@@ -26,7 +26,7 @@ var commit = [];
 for (var idx in domains) {
   var subdomainName = domains[idx].name;
   var domainData = domains[idx].data;
-  var proxyState = proxy.on; // enabled by default
+  var proxyState = proxy.off; // disabled by default
 
   if (!commit[domainData.domain]) {
     commit[domainData.domain] = [];
