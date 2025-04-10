@@ -2,7 +2,7 @@ var regNone = NewRegistrar("none");
 var providerCf = DnsProvider(NewDnsProvider("cloudflare"));
 
 var rootDomain = 'stole-my.id';
-var proxy = { // https://stackexchange.github.io/dnscontrol/providers/cloudflare
+var proxy = { 
   on: { "cloudflare_proxy": "on" },
   off: { "cloudflare_proxy": "off" }
 }
@@ -20,13 +20,13 @@ function getDomainsList(filesPath) {
   return result;
 }
 
-var domains = getDomainsList('./domains');
+var domains = getDomainsList('./subdomains');
 var commit = [];
 
 for (var idx in domains) {
   var subdomainName = domains[idx].name;
   var domainData = domains[idx].data;
-  var proxyState = proxy.off; // disabled by default
+  var proxyState = proxy.off; 
 
   if (!commit[domainData.domain]) {
     commit[domainData.domain] = [];

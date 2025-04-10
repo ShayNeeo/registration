@@ -6,7 +6,7 @@ on:
     push:
         branches: [main]
         paths:
-            - "domains/**"
+            - "subdomains/**"
             - ".github/workflows/validation.yml"
             - "dnsconfig.js"
 
@@ -40,4 +40,4 @@ jobs:
               with:
                   pattern: "\\.json$"
               env:
-                  BASE: "domains/"
+                  BASE: "subdomains/"

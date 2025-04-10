@@ -4,7 +4,7 @@ on:
     push:
         branches: [main]
         paths:
-            - "domains/**"
+            - "subdomains/**"
             - ".github/workflows/publish.yml"
             - "dnsconfig.js"
 
