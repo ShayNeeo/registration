@@ -22,15 +22,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: lets see if this works
-  run: |
-    echo '{
-      "cloudflare": {
-        "TYPE": "CLOUDFLAREAPI",
-        "token": "${{ secrets.CF_API_TOKEN }}"
-      }
-    }' > ./creds.json
+      - name: Debugging: List files in workspace
+        run: ls -la 
 
+      - name: Create Cloudflare API token credentials file
+        run: |
+          echo '{
+            "cloudflare": {
+              "TYPE": "CLOUDFLAREAPI",
+              "token": "${{ secrets.CF_API_TOKEN }}"
+            }
+          }' > ./creds.json
 
       - name: Install DNSControl
         uses: gacts/install-dnscontrol@v1
