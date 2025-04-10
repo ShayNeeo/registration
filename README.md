@@ -58,3 +58,4 @@ Our documentation is available [here](https://docs.stole-my.id)!
 If you want to find services that are similar to is-not.cool, please check out [Open Domains](https://github.com/open-domains/register), [is-a.dev](https://github.com/is-a-dev/register), [part-of.my.id](https://github.com/partofmyid/register), [is-truly-a.pro](https://github.com/is-truly-a-pro/register), and [is-not.cool](https://github.com/is-not-cool/registration)
 # registration
 # registration
+# registration

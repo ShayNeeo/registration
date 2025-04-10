@@ -8,7 +8,7 @@ on:
         paths:
             - "domains/**"
             - ".github/workflows/validation.yml"
-            - "dnsconfig.js"
+            - "../.../dnsconfig.js"
 
     workflow_dispatch:
 
