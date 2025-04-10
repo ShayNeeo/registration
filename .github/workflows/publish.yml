@@ -26,7 +26,7 @@ jobs:
             - name: Publish
               uses: is-cool-me/dnscontrol-action@v4.11.0
               env:
-                  CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+                  CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_KEY }}
               with:
                   args: push
                   config_file: "dnsconfig.js"
