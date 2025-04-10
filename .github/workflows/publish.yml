@@ -1,0 +1,41 @@
+name: Publish
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "domains/**"
+      - ".github/workflows/publish.yml"
+      - "dnsconfig.js"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.ref }}-publish
+  cancel-in-progress: false
+
+jobs:
+  dns:
+    name: DNS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create Cloudflare credentials file
+        run: |
+          echo '{
+            "cloudflare": {
+              "TYPE": "CLOUDFLAREAPI",
+              "email": "${{ secrets.CF_EMAIL }}",
+              "apiKey": "${{ secrets.CF_API_KEY }}"
+            }
+          }' > ./creds.json
+
+      - name: Install DNSControl
+        uses: gacts/install-dnscontrol@v1
+        with:
+          version: 3.31.4
+
+      - name: Publish DNS Records
+        run: dnscontrol push
