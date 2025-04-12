@@ -1,0 +1,13 @@
+{
+    "owner": {
+        "username": "trollmeight",
+        "email": "admin@trollmeight.me",
+        "repo": "react"
+    },
+
+    "record": {
+        "CNAME": ["stole-my-id.github.io"]
+    },
+
+    "proxied": false
+}
