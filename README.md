@@ -3,7 +3,7 @@
 <p align="center"><strong>stole-my.id</strong> is a silly domain made by <a href="https://github.com/iostpa">iostpa</a> and <a href="https://github.com/trollmeight">trollmeight</a>.</p>
 
 <p align="center">
-   <a href="https://discord.gg/ZtcFe2s7St"><img alt="Discord Server" src="https://invidget.switchblade.xyz/aQEVc5fmjU"></a>
+   <a href="https://discord.gg/ZtcFe2s7St"><img alt="Discord Server" src="https://invidget.switchblade.xyz/A2N3UfHFam"></a>
 </p>
 
 > [!CAUTION]
