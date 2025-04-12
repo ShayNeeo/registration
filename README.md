@@ -14,7 +14,7 @@ If you have any problems, feel free to [open an issue](https://github.com/stole-
 
 If you have an issue, please send a email to support@stole-my.id.
 
-If you have a technical issue, please join our [discord server](https://discord.gg/aQEVc5fmjU)!
+If you have a technical issue, please join our [discord server](https://discord.gg/A2N3UfHFam)!
 
 ## Register
 1. Fork the repo.
