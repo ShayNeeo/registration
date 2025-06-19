@@ -1,8 +1,8 @@
 var regNone = NewRegistrar("none");
 var providerCf = DnsProvider(NewDnsProvider("cloudflare"));
 
-var rootDomain = 'stole-my.id';
-var proxy = { 
+var rootDomain = 'is-not.cool';
+var proxy = { // https://stackexchange.github.io/dnscontrol/providers/cloudflare
   on: { "cloudflare_proxy": "on" },
   off: { "cloudflare_proxy": "off" }
 }
@@ -20,13 +20,13 @@ function getDomainsList(filesPath) {
   return result;
 }
 
-var domains = getDomainsList('./subdomains');
+var domains = getDomainsList('./domains');
 var commit = [];
 
 for (var idx in domains) {
   var subdomainName = domains[idx].name;
   var domainData = domains[idx].data;
-  var proxyState = proxy.off; 
+  var proxyState = proxy.on; // enabled by default
 
   if (!commit[domainData.domain]) {
     commit[domainData.domain] = [];
@@ -87,6 +87,15 @@ for (var idx in domains) {
       var srvRecord = domainData.record.SRV[srv];
       commit[domainData.domain].push(
         SRV(subdomainName, srvRecord.priority, srvRecord.weight, srvRecord.port, srvRecord.target + ".")
+      );
+    }
+  }
+
+    if (domainData.record.DS) {
+    for (var ds in domainData.record.DS) {
+      var dsRecord = domainData.record.DS[ds];
+      commit[domainData.domain].push(
+        DS(subdomainName, dsRecord.key_tag, dsRecord.algorithm, dsRecord.digest_type, dsRecord.digest)
       );
     }
   }
