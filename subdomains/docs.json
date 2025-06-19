@@ -6,7 +6,7 @@
     },
 
     "record": {
-        "CNAME": ["stole-my-id.github.io"]
+        "CNAME": "stole-my-id.github.io"
     },
 
     "proxied": false
